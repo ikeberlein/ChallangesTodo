@@ -17,22 +17,15 @@ use Magento\Framework\View\Result\PageFactory;
 class Confirm extends Action
 {
     /**
-     * @var PageFactory
-     */
-    private $pageFactory;
-
-    /**
      * @var TodoCollectionFactory
      */
     private $todoCollectionFactory;
 
     public function __construct(
         Context $context,
-        PageFactory $pageFactory,
         TodoCollectionFactory $todoCollectionFactory
     ) {
         parent::__construct($context);
-        $this->pageFactory = $pageFactory;
         $this->todoCollectionFactory = $todoCollectionFactory;
     }
 
@@ -48,7 +41,7 @@ class Confirm extends Action
             $result = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
             $result->setUrl($this->_url->getDirectUrl('challenges/todo'));
         } else {
-            $result = $this->pageFactory->create();
+            $result = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
             $result->getConfig()->getTitle()->prepend(__('Confirm delete'));
         }
 

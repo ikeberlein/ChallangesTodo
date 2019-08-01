@@ -17,11 +17,6 @@ use Magento\Framework\View\Result\PageFactory;
 class Save extends Action
 {
     /**
-     * @var PageFactory
-     */
-    private $pageFactory;
-
-    /**
      * @var TodoFactory
      */
     private $todoFactory;
@@ -33,20 +28,14 @@ class Save extends Action
 
     public function __construct(
         Context $context,
-        PageFactory $pageFactory,
         TodoFactory $todoFactory,
         TodoCollectionFactory $todoCollectionFactory
     ) {
         parent::__construct($context);
-        $this->pageFactory = $pageFactory;
         $this->todoFactory = $todoFactory;
         $this->todoCollectionFactory = $todoCollectionFactory;
     }
 
-    /**
-     * @return ResponseInterface|ResultInterface|Page
-     * @throws \Exception
-     */
     public function execute()
     {
         $form = $this->getRequest()->getParams();

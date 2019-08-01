@@ -27,11 +27,9 @@ class Delete extends Action
 
     public function __construct(
         Context $context,
-        PageFactory $pageFactory,
         TodoCollectionFactory $todoCollectionFactory
     ) {
         parent::__construct($context);
-        $this->pageFactory = $pageFactory;
         $this->todoCollectionFactory = $todoCollectionFactory;
     }
 
