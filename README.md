@@ -1,7 +1,7 @@
 Todo List for Magento 2
 =======================
 
-An example magento 2 module for demostration purposes
+An example magento 2 module for demostration purposes.
 
 Usage
 ------
@@ -31,3 +31,4 @@ After the module is installed, run magento setup upgrade:
 $ php bin/magento setup:upgrade
 ```
 
+Open http://your-magento-site-url.dev/challenges/todo in your browser.
