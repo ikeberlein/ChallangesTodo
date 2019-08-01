@@ -1,0 +1,23 @@
+{
+    "name": "challenges/module-todo",
+    "description": "Example todo list implementation",
+    "require": {
+        "php": "~7.1.3||~7.2.0",
+        "magento/framework": "102.0.*"
+    },
+    "type": "magento2-module",
+    "license": [ "MIT" ],
+    "authors": [{
+        "name": "Ivan Keberlein",
+        "email": "ivan@keberlein.org",
+        "homepage": "https://github.com/ikeberlein/",
+        "role": "Developer"
+    }],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+          "Challenges\\Todo\\": ""
+        }
+    },
+    "version": "100.0.1"
+}

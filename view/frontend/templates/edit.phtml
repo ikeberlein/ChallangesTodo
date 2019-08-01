@@ -1,0 +1,34 @@
+<?php
+$record = $block->getRecord();
+$actionLabel = isset($record) ? __('save') : __('add');
+?>
+<form class="form" method="post" action="<?= $block->getSaveUrl()?>">
+    <?php if (isset($record)): ?>
+        <input type="hidden" name="id" value="<?= $record->getId() ?>">
+    <?php endif;?>
+
+    <fieldset class="fieldset">
+        <div class="field required">
+            <div class="control">
+                <input type="text" name="task" placeholder="Enter task to do"
+                <?php if (isset($record)) { ?> value="<?= $record->getTask(); ?>" <?php } ?>
+                >
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="action">
+            <button type="submit" class="action primary"><?= $actionLabel ?></button>
+        </div>
+        <?php if (isset($record)): ?>
+        <div class="action">
+            &nbsp;
+            <button type="button" class="action secondary"
+                    onclick="location.href='<?= $block->getDeleteFormUrl($record) ?>'">
+                <?= __('delete') ?>
+            </button>
+        </div>
+        <?php endif; ?>
+    </div>
+</form>

@@ -1,0 +1,18 @@
+<?php
+$record = $block->getRecord();
+?>
+<form class="form" method="post" action="<?= $block->getDeleteUrl($record)?>">
+    <div>
+        <div>
+            <strong><?= __('Really delete the task?') ?></strong>
+        </div>
+        <p>
+            <?= $record->getTask() ?>
+        </p>
+    </div>
+    <div class="actions-toolbar">
+        <div class="action">
+            <button type="submit" class="action primary"><?= __('delete') ?></button>
+        </div>
+    </div>
+</form>

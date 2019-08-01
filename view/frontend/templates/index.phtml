@@ -1,0 +1,13 @@
+<?php
+$collection = $block->getTodoCollection();
+?>
+<ul>
+    <?php foreach ($collection as $item): ?>
+        <li>
+            <a href="<?= $block->getEditUrl($item) ?>"> <?= $item->getTask() ?></a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<div>
+    <a href="<?= $block->getAddUrl() ?>">new task</a>
+</div>
